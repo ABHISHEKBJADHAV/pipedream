@@ -1,0 +1,76 @@
+PROGRAM 1: PROLOG PROGRAM FOR COLLEGE KNOWLEDGE
+
+class(fy,it).
+class(sy,it).
+class(ty,it).
+college(rscoe).
+city(rscoe,pune). 
+state(rscoe,mh).
+branch(it,rscoe).
+branch(cs,rscoe).
+branch(etc,rscoe).
+branch(civil,rscoe).
+branch(mech,rscoe).
+subject(fy,cpp). 
+subject(sy, ds).
+subject(ty, al).
+location(X,Y):-city(C,X), state(C,Y).
+learns(X,Y):- class(C,X), subject(C,Y).
+
+
+PROGRAM 2: PROLOG PROGRAM FOR RELATIONS KNOWLEDGE
+
+parent(x,y).
+parent(z,x).
+child(X,Y):-parent(Y,X).
+grandparent(Z,Y):-parent(Z,X),parent(X,Y).
+friend(p,y).
+friend(X,Y):-friend(Y,X).
+likes(p,sing).
+likes(y,cricket).
+classmates(p,y).
+classmates(X,Y):-classmates(Y,X).
+
+
+PROGRAM 3: PROLOG PROGRAM FOR TEACHER STUDENT KNOWLEDGE
+
+parent(x,y).
+parent(z,x).
+child(X,Y):-parent(Y,X).
+grandparent(Z,Y):-parent(Z,X),parent(X,Y).
+friend(p,y).
+friend(X,Y):-friend(Y,X).
+likes(p,sing).
+likes(y,cricket).
+classmates(p,y).
+classmates(X,Y):-classmates(Y,X).
+
+
+PROGRAM 4: PROLOG PROGRAM FOR MIN MAX
+
+find_max(X,Y,X):-X>Y , ! .
+find_max(X,Y,Y):-Y>X.
+find_min(X,Y,X):-X<Y,!.
+find_min(X,Y,Y):-Y<X.
+
+
+PROGRAM 5: PROLOG PROGRAM FOR MIN MAX
+
+bike(ktm).
+bike(bike1).
+bike(bike2).
+bike(bike3).
+location(bike1,city1).
+location(bike1,city2).
+location(bike2,city2).
+location(bike3,city3).
+category(bike1,electric).
+category(bike2,petrol).
+category(bike3,pertol).
+price(bike1,80000).
+price(bike2,70000).
+price(bike3,60000).
+find_max(A,B,A):-price(A,X),price(B,Y),X>=Y, ! .
+find_max(A,B,B):-price(A,X),price(B,Y),Y>X.
+find_min(A,B,A):-price(A,X),price(B,Y),X<Y, ! .
+find_min(A,B,B):-price(A,X),price(B,Y),Y<X.
